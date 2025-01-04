@@ -15,3 +15,51 @@ python-source = "python"
 [build-system]
 requires = ["maturin>=1.0,<2.0"]
 build-backend = "maturin"
+
+[dependency-groups]
+ci = [
+    "mypy>=1.14.1",
+    "pytest>=8.3.4",
+    "ruff>=0.8.5",
+]
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+  "E",  # pycodestyle errors
+  "W",  # pycodestyle warnings
+  "F",  # pyflakes
+  "I",  # isort
+  "C4",  # flake8-comprehensions
+  "B",  # flake8-bugbear
+  "TCH",  # flake8-type-checking
+  "TID",  # flake8-tidy-imports
+  "SIM", # flake8-simplify
+  "Q", # flake8-quotes
+  "PIE", # flake8-pie
+  "UP",  # pyupgrade
+  "PT",  # flake8-pytest-style
+  "C90",  # mccabe
+]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 18
+
+[tool.ruff.lint.isort]
+split-on-trailing-comma = false
+known-first-party = ["text_string_metrics"]
+
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[tool.ruff.lint.flake8-type-checking]
+strict = true
+
+[tool.mypy]
+files = ["python", "tests"]
+strict = true
+
+[tool.pytest.ini_options]
+addopts = "-vv"
