@@ -7,7 +7,7 @@ use crate::distance::levenshtein;
 /// the `lib.name` setting in the `Cargo.toml`, else Python will not be able to
 /// import the module.
 #[pymodule]
-fn string_metrics(m: &Bound<'_, PyModule>) -> PyResult<()> {
+fn text_string_metrics(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(levenshtein, m)?)?;
     Ok(())
 }

@@ -1,10 +1,10 @@
 [package]
-name = "string-metrics"
-version = "0.1.0"
+name = "text-string-metrics"
+version = "0.1.1"
 edition = "2021"
 
 [lib]
-name = "string_metrics"
+name = "text_string_metrics"
 # "cdylib" is necessary to produce a shared library for Python to import from.
 crate-type = ["cdylib"]
 
