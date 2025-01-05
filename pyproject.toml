@@ -1,5 +1,5 @@
 [project]
-name = "text-string-metrics"
+name = "string-metrics-rs"
 version = "0.1.1"
 description = "Add your description here"
 readme = "README.md"
@@ -11,6 +11,7 @@ dependencies = []
 
 [tool.maturin]
 python-source = "python"
+module-name = "string_metrics._string_metrics"
 
 [build-system]
 requires = ["maturin>=1.0,<2.0"]
@@ -21,6 +22,10 @@ ci = [
     "mypy>=1.14.1",
     "pytest>=8.3.4",
     "ruff>=0.8.5",
+]
+dev = [
+    {include-group = "ci"},
+    "maturin>=1.8.1",
 ]
 
 [tool.ruff]
@@ -49,7 +54,7 @@ max-complexity = 18
 
 [tool.ruff.lint.isort]
 split-on-trailing-comma = false
-known-first-party = ["text_string_metrics"]
+known-first-party = ["string_metrics"]
 
 [tool.ruff.lint.flake8-tidy-imports]
 ban-relative-imports = "all"

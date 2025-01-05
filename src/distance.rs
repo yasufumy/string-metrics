@@ -1,6 +1,7 @@
 use pyo3::prelude::*;
 
 #[pyfunction]
+/// Calculate the Levenshtein distance between two strings.
 pub fn levenshtein(x: String, y: String) -> usize {
     let mut cost = vec![vec![0; y.len() + 1]; x.len() + 1];
     for i in 0..=x.len() {
