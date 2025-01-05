@@ -1,6 +1,6 @@
 import pytest
 
-from text_string_metrics import levenshtein
+from string_metrics import levenshtein
 
 
 @pytest.mark.parametrize(
