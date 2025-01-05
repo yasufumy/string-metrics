@@ -50,7 +50,7 @@ max-complexity = 18
 
 [tool.ruff.lint.isort]
 split-on-trailing-comma = false
-known-first-party = ["text_string_metrics"]
+known-first-party = ["string_metrics"]
 
 [tool.ruff.lint.flake8-tidy-imports]
 ban-relative-imports = "all"
